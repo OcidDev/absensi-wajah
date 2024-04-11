@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('detail_users', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('birthday');
-            $table->enum('gender', ['male', 'female'])->nullable()->default('male');
+            $table->enum('gender', ['Laki-laki', 'Perempuan'])->nullable()->default('Laki-laki');
             $table->string('precision1')->nullable();
             $table->timestamps();
         });

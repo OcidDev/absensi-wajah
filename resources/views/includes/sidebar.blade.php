@@ -18,7 +18,7 @@
             <span class="hide-menu">Home</span>
           </li>
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('index') }}" aria-expanded="false">
               <span>
                 <i class="ti ti-layout-dashboard"></i>
               </span>
@@ -31,11 +31,20 @@
           </li>
 
           <li class="sidebar-item">
-            <a class="sidebar-link" href="#" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('user.index') }}" aria-expanded="false">
               <span>
                 <i class="ti ti-article"></i>
               </span>
-              <span class="hide-menu">Data</span>
+              <span class="hide-menu">User</span>
+            </a>
+          </li>
+
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('laporan') }}" aria-expanded="false">
+              <span>
+                <i class="ti ti-article"></i>
+              </span>
+              <span class="hide-menu">Laporan</span>
             </a>
           </li>
 

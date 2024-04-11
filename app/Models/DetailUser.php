@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class DetailUser extends Model
 {
     use HasFactory;
+    protected $table = 'detail_users';
     protected $fillable = [
         'user_id',
         'birthday',

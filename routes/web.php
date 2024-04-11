@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\Laporan;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +23,6 @@ use App\Http\Controllers\DashboardController;
 // });
 
 Route::resource('/', DashboardController::class);
-// Route::resource('user', UserController::class);
+Route::resource('/user', UserController::class);
+// route get laporan
+Route::get('/laporan', [Laporan::class, 'index'])->name('laporan');
