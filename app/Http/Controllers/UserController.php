@@ -7,7 +7,7 @@ use App\Models\DetailUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
-
+use RealRashid\SweetAlert\Facades\Alert;
 class UserController extends Controller
 {
     /**
@@ -35,7 +35,8 @@ class UserController extends Controller
         // dd($request->all());
         //request and validate
         $request->validate([
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required',
             'password' => 'required',
             'birthday' => 'required',
@@ -46,7 +47,6 @@ class UserController extends Controller
 
         // store data model User
         User::create([
-            'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
@@ -57,13 +57,15 @@ class UserController extends Controller
         // Store data model DetailUser
         DetailUser::create([
             'user_id' => $data->id,
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'birthday' => $request->birthday,
             'gender' => $request->gender
         ]);
 
-        // delete user if not succer store detail user
-        if (!$data) {
-
+        // delete user or detail user on not sucess
+        if (!$data || !DetailUser::where('user_id', $data->id)->exists()) {
+            return redirect('/user')->with('error', 'Data Gagal Ditambahkan');
         }
 
         return redirect('/user')->with('success', 'Data Berhasil');
@@ -93,7 +95,8 @@ class UserController extends Controller
     {
         // request validate
         $request->validate([
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required',
             'birthday' => 'required',
             'gender' => 'required',
@@ -110,7 +113,6 @@ class UserController extends Controller
         }
         // update data model User
         $data->update([
-            'name' => $request->name,
             'email' => $request->email,
             'password' => $passwrod,
         ]);
@@ -120,6 +122,8 @@ class UserController extends Controller
 
         // Store data model DetailUser where user id
         DetailUser::where('user_id', $user_id)->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
             'birthday' => $request->birthday,
             'gender' => $request->gender
         ]);

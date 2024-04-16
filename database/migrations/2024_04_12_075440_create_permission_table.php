@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('permission')->nullable();
-            $table->string('status')->nullable();
-            $table->string('lampiran')->nullable();
+            $table->string('permission', 15)->nullable();
+            $table->string('status', 50)->nullable();
+            $table->longText('lampiran')->nullable();
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->date('birthday');
             $table->enum('gender', ['Laki-laki', 'Perempuan'])->nullable()->default('Laki-laki');
-            $table->string('precision1')->nullable();
+            $table->longText('precision1')->nullable();
             $table->timestamps();
         });
     }

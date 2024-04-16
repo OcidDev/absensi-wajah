@@ -21,8 +21,12 @@
                             @csrf
                             @method('POST')
                             <div class="mb-3">
-                                <label for="nama" class="form-label">Nama</label>
-                                <input type="text" name="name" class="form-control" placeholder=""/>
+                                <label for="first_name" class="form-label">Nama Depan</label>
+                                <input type="text" name="first_name" class="form-control" placeholder=""/>
+                            </div>
+                            <div class="mb-3">
+                                <label for="last_name" class="form-label">Nama Belakang</label>
+                                <input type="text" name="last_name" class="form-control" placeholder=""/>
                             </div>
 
                             <div class="mb-3">
@@ -58,9 +62,9 @@
 </div>
 @endsection
 @push('before-script')
-    <script src="admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url('admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 @endpush
 @push('after-script')
-    <script src="admin/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="admin/assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="{{ url('admin/assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+    <script src="{{ url('admin/assets/libs/simplebar/dist/simplebar.js') }}"></script>
 @endpush

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         //add column first_name and last_name table detail_users
         Schema::table('detail_users', function (Blueprint $table) {
-            $table->string('first_name')->after('user_id');
-            $table->string('last_name')->after('first_name');
+            $table->string('first_name', 40)->after('user_id');
+            $table->string('last_name', 40)->after('first_name');
         });
     }
 
