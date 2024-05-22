@@ -71,7 +71,10 @@
                                 <tfoot class="text-dark fs-4">
                                     <tr>
                                         <th class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">Nama</h6>
+                                            <h6 class="fw-semibold mb-0">Nama Depan</h6>
+                                        </th>
+                                        <th class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">Nama Belakang</h6>
                                         </th>
                                         <th class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">Email</h6>

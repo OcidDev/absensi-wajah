@@ -25,6 +25,14 @@
               <span class="hide-menu">Dashboard</span>
             </a>
           </li>
+          <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('absensi.index') }}" aria-expanded="false">
+              <span>
+                <i class="ti ti-layout-dashboard"></i>
+              </span>
+              <span class="hide-menu">Scan Absen</span>
+            </a>
+          </li>
           <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Master</span>
@@ -33,7 +41,7 @@
           <li class="sidebar-item">
             <a class="sidebar-link" href="{{ route('user.index') }}" aria-expanded="false">
               <span>
-                <i class="ti ti-article"></i>
+                <i class="ti ti-user"></i>
               </span>
               <span class="hide-menu">User</span>
             </a>
@@ -51,7 +59,7 @@
           <li class="sidebar-item">
             <a class="sidebar-link" href="{{ route('permission.index') }}" aria-expanded="false">
               <span>
-                <i class="ti ti-article"></i>
+                <i class="ti ti-mail"></i>
               </span>
               <span class="hide-menu">Permission</span>
             </a>
@@ -59,23 +67,15 @@
 
           <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">AUTH</span>
+            <span class="hide-menu">Other</span>
           </li>
 
           <li class="sidebar-item">
             <a class="sidebar-link" href="./authentication-login.html" aria-expanded="false">
               <span>
-                <i class="ti ti-login"></i>
+                <i class="ti ti-settings"></i>
               </span>
-              <span class="hide-menu">Login</span>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a class="sidebar-link" href="./authentication-register.html" aria-expanded="false">
-              <span>
-                <i class="ti ti-user-plus"></i>
-              </span>
-              <span class="hide-menu">Register</span>
+              <span class="hide-menu">Setting</span>
             </a>
           </li>
         </ul>

@@ -1,145 +1,114 @@
 @extends('layout.dashboard')
 
 @section('content')
-<style>
-    .cam-scan {
-        width : 60%;
-        height: 500px;
-        background: #000;
-    }
-</style>
 
-<div class="col-12 d-block">
-    <div class="d-flex justify-content-center">
-        <div class="cam-scan">
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h2>Selamat Datang di Dashboard</h2>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="col-12 mt-5 mb-5">
-    <div class="table-responsive">
-        <table id="example" class="table table-bordered  table-hover table-striped text-nowrap mb-0 align-middle" style="width:100%">
-            <thead class="text-dark fs-4">
-                <tr>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">No</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Nama</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Jam absen</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Status</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Keterangan</h6>
-                    </th>
-                </tr>
-            </thead>
-            {{-- <tbody>
-                @foreach($data as $d)
-                <tr>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">{{ $d->id_transaksi }}</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">{{ $d->nama_produk }}</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">Rp. {{ $d->total_harga }}</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">{{ $d->date }}</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <div class="d-flex align-items-center gap-2">
-                            <span class="badge {{ $d->status == 'Batal' ? 'bg-danger' : ($d->status == 'Selesai' ? 'bg-success' : '') }} rounded-3 fw-semibold">{{ $d->status }}</span>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="d-flex align-items-center gap-2">
-                            <a href="{{ route('absensi.edit', $d->id) }}" class="btn btn-sm btn-primary">Edit</a>
-                            <form action="{{ route('absensi.destroy', $d->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-                            </form>
-                        </div>
-                    </td>
-                </tr>
-                @endforeach
-            </tbody> --}}
-
-            <tbody>
-
-                <tr>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">1</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">Ocid</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold"> {{ date('H:i:s') }} </p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold"> <span class="badge text-bg-success"> Masuk </span> </p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold"> - </p>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">2</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold">Arul</p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold"> {{ date('H:i:s') }} </p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold"> <span class="badge text-bg-danger"> Alfa </span> </p>
-                    </td>
-                    <td class="border-bottom-0">
-                        <p class="fw-semibold"> Mokel di warteg </p>
-                    </td>
-                </tr>
-
-            </tbody>
-
-            <tfoot class="text-dark fs-4">
-                <tr>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">No</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Nama</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Jam absen</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Status</h6>
-                    </th>
-                    <th class="border-bottom-0">
-                        <h6 class="fw-semibold mb-0">Keterangan</h6>
-                    </th>
-                </tr>
-            </tfoot>
-        </table>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4>Total kehadiran</h4>
+                <p> 10 orang</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4>Total ketidakhadiran</h4>
+                <p>1 orang</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4>Total izin</h4>
+                <p>1 orang</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4>Total sakit</h4>
+                <p>1 orang</p>
+            </div>
+        </div>
     </div>
 </div>
 
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>5 Absensi Terakhir</h4>
+            </div>
+            <div class="card-body">
+                <table class="table table-striped" id="recent-attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Tanggal</th>
+                            <th>Nama</th>
+                            <th>Status</th>
+                            <th>Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01-03-2023</td>
+                            <td>Bagir</td>
+                            <td><span class="badge bg-success">Hadir</span></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>28-02-2023</td>
+                            <td>Tresno</td>
+                            <td><span class="badge bg-warning">Izin</span></td>
+                            <td>Keperluan Keluarga</td>
+                        </tr>
+                        <tr>
+                            <td>27-02-2023</td>
+                            <td>Yusuf</td>
+                            <td><span class="badge bg-primary">Sakit</span></td>
+                            <td>Flu</td>
+                        </tr>
+                        <tr>
+                            <td>26-02-2023</td>
+                            <td>Mulyana</td>
+                            <td><span class="badge bg-success">Hadir</span></td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>25-02-2023</td>
+                            <td>Khusnul</td>
+                            <td><span class="badge bg-danger">Ketidakhadiran</span></td>
+                            <td>Tanpa Keterangan</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @endsection
 @push('before-script')
-    <script src="admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 @endpush
 @push('after-script')
-    <script src="admin/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
-    <script src="admin/assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="/admin/assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+    <script src="/admin/assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="/vendor/face-api/script.js"></script>
 @endpush

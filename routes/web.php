@@ -3,6 +3,7 @@
 use App\Http\Controllers\Laporan;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AbsensiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PermissionController;
 
@@ -24,6 +25,7 @@ use App\Http\Controllers\PermissionController;
 // });
 
 Route::resource('/', DashboardController::class);
+Route::resource('absensi', AbsensiController::class);
 Route::resource('/user', UserController::class);
 Route::resource('/permission', PermissionController::class);
 Route::put('/permission/{id}/accept', [PermissionController::class, 'accept'])->name('permission.accept');
